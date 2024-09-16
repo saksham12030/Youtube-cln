@@ -14,7 +14,6 @@ import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
     // const open=false;
-    const open=useSelector(slice=>slice.app.open);
     const array = [
       {
         image: <GoHome size={"24px"} />,
@@ -56,13 +55,134 @@ const Sidebar = () => {
         image: <BiLike size={"24px"} />,
         text: "Liked Videos",
       },
+      {
+        image: <GoHome size={"24px"} />,
+        text: "Home",
+      },
+      {
+        image: <SiYoutubeshorts size={"24px"} />,
+        text: "Short",
+      },
+      {
+        image: <MdOutlineSubscriptions size={"24"} />,
+        text: "Subscription",
+      },
+      {
+        image: <RiAccountBoxLine size={"24px"} />,
+        text: "Your Channel",
+      },
+      {
+        image: <LuHistory size={"24px"} />,
+        text: "History",
+      },
+      {
+        image: <MdOutlinePlaylistPlay size={"24px"} />,
+        text: "Playlists",
+      },
+      {
+        image: <GoVideo size={"24px"} />,
+        text: "Your Videos",
+      },
+      {
+        image: <MdPodcasts size={"24px"} />,
+        text: "Your Podcasts",
+      },
+      {
+        image: <MdOutlineWatchLater size={"24px"} />,
+        text: "Watch Later",
+      },
+      {
+        image: <BiLike size={"24px"} />,
+        text: "Liked Videos",
+      },
+      {
+        image: <GoHome size={"24px"} />,
+        text: "Home",
+      },
+      {
+        image: <SiYoutubeshorts size={"24px"} />,
+        text: "Short",
+      },
+      {
+        image: <MdOutlineSubscriptions size={"24"} />,
+        text: "Subscription",
+      },
+      {
+        image: <RiAccountBoxLine size={"24px"} />,
+        text: "Your Channel",
+      },
+      {
+        image: <LuHistory size={"24px"} />,
+        text: "History",
+      },
+      {
+        image: <MdOutlinePlaylistPlay size={"24px"} />,
+        text: "Playlists",
+      },
+      {
+        image: <GoVideo size={"24px"} />,
+        text: "Your Videos",
+      },
+      {
+        image: <MdPodcasts size={"24px"} />,
+        text: "Your Podcasts",
+      },
+      {
+        image: <MdOutlineWatchLater size={"24px"} />,
+        text: "Watch Later",
+      },
+      {
+        image: <BiLike size={"24px"} />,
+        text: "Liked Videos",
+      },
+      {
+        image: <GoHome size={"24px"} />,
+        text: "Home",
+      },
+      {
+        image: <SiYoutubeshorts size={"24px"} />,
+        text: "Short",
+      },
+      {
+        image: <MdOutlineSubscriptions size={"24"} />,
+        text: "Subscription",
+      },
+      {
+        image: <RiAccountBoxLine size={"24px"} />,
+        text: "Your Channel",
+      },
+      {
+        image: <LuHistory size={"24px"} />,
+        text: "History",
+      },
+      {
+        image: <MdOutlinePlaylistPlay size={"24px"} />,
+        text: "Playlists",
+      },
+      {
+        image: <GoVideo size={"24px"} />,
+        text: "Your Videos",
+      },
+      {
+        image: <MdPodcasts size={"24px"} />,
+        text: "Your Podcasts",
+      },
+      {
+        image: <MdOutlineWatchLater size={"24px"} />,
+        text: "Watch Later",
+      },
+      {
+        image: <BiLike size={"24px"} />,
+        text: "Liked Videos",
+      },
     ];
-  return (
-    <div className='relative left-0  overflow-y-scroll py-3 px-5 h-[calc(100vh-4.635rem)]  overflow-x-hidden w-auto'>
+    const open=useSelector(slice=>slice.app.open);
+    return (
+      <div className={`relative left-0  ${open?"w-[16%]":"w-auto"} overflow-y-scroll py-3 px-5 h-[calc(100vh-4.635rem)]  overflow-x-hidden`}>
         {
-            array.map((item,index)=>{
-                return (
-                    <div key={index} className='flex my-4  ml-2  items-center '>
+          array.map((item,index)=>{
+            return (
+              <div key={index} className='flex my-4  ml-2  items-center '>
                         {item.image}
                         <p className={`mx-3 flex ${open?"":"hidden"}`}>{item.text}</p>
                     </div>

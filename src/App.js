@@ -1,19 +1,31 @@
-import './App.css';
-import Feed from './Components/Feed';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import Navbar from './Components/Navbar';
-import Sidebar from './Components/Sidebar';
+import Body from './Components/Body';
+import Watch from './Components/Watch';
+import Feed from './Components/Feed';
+const approuter=createBrowserRouter([
+  {
+  path:"/",
+  element:<Body/>,
+  children:[
+    {
+      path:"/",
+      element:<Feed/>
+    },
+    {
+      path:"/watch",
+      element:<Watch/>
+    },
+  ]
+
+}])
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <div className='mt-16 flex'>
-        <div >
-          <Sidebar/>
-        </div>
-      <Feed/>
-      </div>
+    <div>
+      <Navbar />
+      <RouterProvider router={approuter} />
     </div>
   );
 }
-
 export default App;
